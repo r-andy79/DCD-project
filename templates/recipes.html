@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    {% for recipe in recipes %}
+      <div class="row"><h2>{{recipe.name}}</h2></div>
+      <p>{{recipe.author}}</p><br>
+      <p>{{recipe.cuisine}}</p><br>
+      {{recipe.allergens}}
+      <ul id="ingredients">
+      {% for item in recipe.ingredients %}
+        <li>{{ item }}</li>
+      {% endfor %}
+      </ul>
+      {{recipe.preparation}}
+      {{recipe.like}}
+      {{recipe.votes}}
+      {{recipe.date_added}}
+    {% endfor %}
+
+{% endblock %}
