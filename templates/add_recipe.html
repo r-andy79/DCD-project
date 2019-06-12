@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+  <div class="card-body">
+    <form action="{{ url_for('add_recipe') }}" method="POST">
+      <div class="form-group">
+        <label for="name">Dish name</label>
+        <input name="name" type="text" class="form-control" id="name" required>
+      </div>
+      <div class="form-group">
+        <label for="author">Author's name</label>
+        <input name="author" type="text" class="form-control" id="author" required>
+      </div>
+      <div class="form-group">
+        <label for="cuisine">Cuisine</label>
+        <input name="cuisine" type="text" class="form-control" id="cuisine" required>
+      </div>
+      <div class="form-group">
+        <label for="allergens">Allergens</label>
+        <input name="allergens" type="text" class="form-control" id="allergens" required>
+      </div>
+      <div class="form-group">
+        <label for="ingredients">Ingredients</label>
+        <input name="ingredients" type="text" class="form-control" id="ingredients" required>
+      </div>
+      <div class="form-group">
+        <label for="preparation">Ingredients</label>
+        <textarea name="preparation" class="form-control" id="preparation" placeholder="Enter your desciription here" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Add recipe</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
